@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['courses-top.ru']
+    domains: ['owltop-course.vercel.app']
   },
   webpack(config) {
     config.module.rules.push({
