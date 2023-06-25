@@ -1,26 +1,18 @@
 import { GetStaticProps } from 'next';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { withLayout } from '../layout/Layout';
 import axios from 'axios';
 import { MenuItem } from '../interfaces/menu.interface';
 import { API } from '../helpers/api';
-import { useRouter } from 'next/router';
 import LoaderIcon from "./loader.svg"
 
 function Home(): JSX.Element {
   const [isLoading, setIsLoading] = useState<boolean>(false)
-  const router = useRouter()
-
-  useEffect(() => {
-    setIsLoading(true)
-    router.push(`${process.env.NEXT_PUBLIC_DOMAIN}/courses/financial-analytics`)
-    setIsLoading(false)
-    // eslint-disable-next-line
-  }, [])
 
   return (
     <>
       {!isLoading && <div style={{height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}><LoaderIcon /></div>}
+
     </> 
   );
 }
